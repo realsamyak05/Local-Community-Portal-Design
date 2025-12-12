@@ -1,3 +1,3 @@
 # Local-Community-Portal-Design
 
-This repository contains a website's frontend and it's ideated presentation.
+This repository contains 5 html files, which are collectively part of my WebDev project, i.e. Local Community Portal.
