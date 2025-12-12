@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+
+    <style>
+        body {
+            background: #EDE6DB;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        header {
+            background: #1A3C40;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            background: #417D7A;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .box {
+            width: 350px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1A3C40;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #417D7A;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Invalid Email Address!");
+                return false;
+            }
+            if (pass.length < 6) {
+                alert("Password should be at least 6 characters.");
+                return false;
+            }
+
+            alert("Login Successful!");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="business.html">Business Directory</a>
+        <a href="forum.html">Forum</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <div class="box">
+        <form onsubmit="return validateForm()">
+            <input type="text" id="email" placeholder="Enter Email">
+            <input type="password" id="pass" placeholder="Enter Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

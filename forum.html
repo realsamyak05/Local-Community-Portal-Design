@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Community Forum</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #2E5266;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background: #6E8898;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+        }
+
+        .post {
+            background: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <script>
+        function postMessage() {
+            let text = document.getElementById("msg").value;
+
+            if (text.trim() === "") {
+                alert("Message cannot be empty!");
+                return;
+            }
+
+            let div = document.createElement("div");
+            div.className = "post";
+            div.innerHTML = "<p>" + text + "</p>";
+
+            document.getElementById("posts").appendChild(div);
+            document.getElementById("msg").value = "";
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Resident Forum</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="business.html">Business Directory</a>
+        <a href="forum.html">Forum</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <div class="container">
+        <h3>Share Your Thoughts:</h3>
+        <textarea id="msg"></textarea><br><br>
+        <button onclick="postMessage()">Post</button>
+
+        <div id="posts"></div>
+    </div>
+
+</body>
+
+</html>
